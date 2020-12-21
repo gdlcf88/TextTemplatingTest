@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>TextTemplatingTest</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TextTemplatingTest.Application\TextTemplatingTest.Application.csproj" />
+    <ProjectReference Include="..\TextTemplatingTest.Domain.Tests\TextTemplatingTest.Domain.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TextTemplating\Welcome.tpl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TextTemplating\Welcome.tpl" />
+    <None Remove="TextTemplating\Welcome2.tpl" />
+    <EmbeddedResource Include="TextTemplating\Welcome2.tpl" />
+  </ItemGroup>
+
+</Project>
